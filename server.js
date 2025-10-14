@@ -6,7 +6,7 @@ import request from "request";
 const app = express();
 app.use(bodyParser.json());
 
-const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const VERIFY_TOKEN = "sjcverify123";
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 // ✅ Verify webhook
@@ -340,4 +340,5 @@ function callSendAPI(sender_psid, response) {
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`🚀 Bot server running on port ${PORT}`));
+
 
