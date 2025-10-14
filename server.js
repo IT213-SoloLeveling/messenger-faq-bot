@@ -338,4 +338,6 @@ function callSendAPI(sender_psid, response) {
   );
 }
 
-app.listen(10000, () => console.log("🚀 Bot server running on port 10000"));
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log(`🚀 Bot server running on port ${PORT}`));
+
