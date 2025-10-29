@@ -339,6 +339,11 @@ function callSendAPI(sender_psid, response) {
 }
 
 const PORT = process.env.PORT || 10000;
+// ✅ Privacy Policy route (hosted externally on TermsFeed)
+app.get("/privacy", (req, res) => {
+  res.redirect("https://www.termsfeed.com/live/b596903d-9982-4870-b71e-e1ba28b16af9");
+});
 
 // ✅ Start server
 app.listen(PORT, () => console.log🚀 Bot server running on port ${PORT}`));
+
