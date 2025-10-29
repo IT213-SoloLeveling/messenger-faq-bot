@@ -78,15 +78,15 @@ function handleMessage(sender_psid, text) {
     
     if (isBisaya) {
       response = { 
-        text: "Kumusta! Ako si Hestia, ang inyong Tourism & Hospitality Department assistant. Unsaon ko ninyo matabang karon? 👋\n\nMga paspas nga pangutana:\n• Sultihi ko bahin sa mga programa\n• Unsa ang mga industry partnerships?\n• Unsa ang mga events ug competitions?\n• Unsa ang practical training?\n• Unsa ang mga extra costs?\n• Unsa ang academic content?\n• Unsa ang mga trabaho nga makakuha nako?\n• Kinahanglan ba ko mag-thesis?\n• Kinsa ang nag-develop niini?"
+        text: "Kumusta! Ako si Hestia, ang inyong Tourism & Hospitality Department assistant. Unsaon ko ninyo matabang karon? 👋\n\nMga paspas nga pangutana:\n• Sultihi ko bahin sa mga programa\n• Unsa ang mga industry partnerships?\n• Unsa ang mga events ug competitions?\n• Unsa ang practical training?\n• Unsa ang mga extra costs?\n• Unsa ang academic content?\n• Unsa ang mga trabaho nga makakuha nako?\n• Kinahanglan ba ko mag-thesis?\n• Kinsa ang Dean?\n• Kinsa ang mga instructors?\n• Asa ang Saint Joseph College?"
       };
     } else if (isTagalog) {
       response = { 
-        text: "Kumusta! Ako si Hestia, ang inyong Tourism & Hospitality Department assistant. Paano ko kayo matutulungan ngayon? 👋\n\nMabilis na mga tanong:\n• Sabihin mo sa akin ang mga programa\n• Ano ang mga industry partnerships?\n• Ano ang mga events at competitions?\n• Ano ang practical training?\n• Ano ang mga extra costs?\n• Ano ang academic content?\n• Ano ang mga trabaho na makukuha ko?\n• Kailangan ba ako mag-thesis?\n• Sino ang nag-develop nito?"
+        text: "Kumusta! Ako si Hestia, ang inyong Tourism & Hospitality Department assistant. Paano ko kayo matutulungan ngayon? 👋\n\nMabilis na mga tanong:\n• Sabihin mo sa akin ang mga programa\n• Ano ang mga industry partnerships?\n• Ano ang mga events at competitions?\n• Ano ang practical training?\n• Ano ang mga extra costs?\n• Ano ang academic content?\n• Ano ang mga trabaho na makukuha ko?\n• Kailangan ba ako mag-thesis?\n• Sino ang Dean?\n• Sino ang mga instructors?\n• Nasaan ang Saint Joseph College?"
       };
     } else {
       response = { 
-        text: "Hello! I'm Hestia, your Tourism & Hospitality Department assistant. How can I help you today? 👋\n\nQuick Questions:\n• Tell me about the programs\n• What are the industry partnerships?\n• What events and competitions are there?\n• What practical training is included?\n• What are the extra costs?\n• What's the academic content like?\n• What jobs can I get?\n• Do I need to do a thesis?\n• Who developed this?"
+        text: "Hello! I'm Hestia, your Tourism & Hospitality Department assistant. How can I help you today? 👋\n\nQuick Questions:\n• Tell me about the programs\n• What are the industry partnerships?\n• What events and competitions are there?\n• What practical training is included?\n• What are the extra costs?\n• What's the academic content like?\n• What jobs can I get?\n• Do I need to do a thesis?\n• Who is the Dean?\n• Who are the instructors?\n• Where is Saint Joseph College?"
       };
     }
   } 
@@ -229,24 +229,76 @@ function handleMessage(sender_psid, text) {
       };
     }
   } 
-  // Developer information
-  else if (text.includes("develop") || text.includes("create") || text.includes("who") || text.includes("made") || text.includes("author") ||
-           text.includes("kinsa") || text.includes("sino")) {
+  // Dean information
+  else if (text.includes("dean") || text.includes("head") || text.includes("director")) {
     
     if (isBisaya) {
       response = { 
-        text: "Kini nga chatbot gihimo sa *Group AUZA*, usa ka team sa 4th-year BSIT students:\n\n• Francisco Dag-uman\n• Martin John Bacho\n• Ryan Galano\n• Ramsil Calapre"
+        text: "Ang Dean sa Tourism ug Hospitality Department mao si **Rosalinda C. Jomoc, DDM-ET**. 👩‍💼"
       };
     } else if (isTagalog) {
       response = { 
-        text: "Ang chatbot na ito ay ginawa ng *Group AUZA*, isang team ng 4th-year BSIT students:\n\n• Francisco Dag-uman\n• Martin John Bacho\n• Ryan Galano\n• Ramsil Calapre"
+        text: "Ang Dean ng Tourism at Hospitality Department ay si **Rosalinda C. Jomoc, DDM-ET**. 👩‍💼"
       };
     } else {
       response = { 
-        text: "This chatbot was created by *Group AUZA*, a team of 4th-year BSIT students:\n\n• Francisco Dag-uman\n• Martin John Bacho\n• Ryan Galano\n• Ramsil Calapre"
+        text: "The Dean of the Tourism and Hospitality Department is **Rosalinda C. Jomoc, DDM-ET**. 👩‍💼"
       };
     }
-  } 
+  }
+  // Full-time instructors
+  else if (text.includes("full-time") || text.includes("fulltime") || text.includes("full time") || 
+           (text.includes("instructor") && text.includes("full"))) {
+    
+    if (isBisaya) {
+      response = { 
+        text: "Ang mga full-time instructors sa Tourism ug Hospitality Department:\n\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre 👨‍🏫👩‍🏫"
+      };
+    } else if (isTagalog) {
+      response = { 
+        text: "Ang mga full-time instructors sa Tourism at Hospitality Department:\n\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre 👨‍🏫👩‍🏫"
+      };
+    } else {
+      response = { 
+        text: "The full-time instructors in the Tourism and Hospitality Department:\n\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre 👨‍🏫👩‍🏫"
+      };
+    }
+  }
+  // Part-time instructors
+  else if (text.includes("part-time") || text.includes("parttime") || text.includes("part time") || 
+           (text.includes("instructor") && text.includes("part"))) {
+    
+    if (isBisaya) {
+      response = { 
+        text: "Ang mga part-time instructors sa Tourism ug Hospitality Department:\n\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    } else if (isTagalog) {
+      response = { 
+        text: "Ang mga part-time instructors sa Tourism at Hospitality Department:\n\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    } else {
+      response = { 
+        text: "The part-time instructors in the Tourism and Hospitality Department:\n\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    }
+  }
+  // All instructors
+  else if (text.includes("instructor") || text.includes("teacher") || text.includes("faculty") || text.includes("professor")) {
+    
+    if (isBisaya) {
+      response = { 
+        text: "Ang Tourism ug Hospitality Department adunay full-time ug part-time instructors.\n\n**Full-time:**\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre\n\n**Part-time:**\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    } else if (isTagalog) {
+      response = { 
+        text: "Ang Tourism at Hospitality Department ay may full-time at part-time instructors.\n\n**Full-time:**\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre\n\n**Part-time:**\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    } else {
+      response = { 
+        text: "The Tourism and Hospitality Department has both full-time and part-time instructors.\n\n**Full-time:**\n• Xaviera Colleen De Paz\n• Jazfer Jadd Sala\n• Angeline Manliguez\n• Euzarn Cuaton\n• Wayne Clerigo\n• Perlita Gerona\n• Eva Palero\n• Rachel Mamado\n• Trisha Louraine De La Torre\n\n**Part-time:**\n• Jovanni Christian Plateros\n• Ruby De la Torre\n• Paz Belen Mariño\n• Rafael Bachanicha\n• Fr. Allan Igbalic\n• Fr. Emerson Nazareth\n• Fr. Mark Ortega 👨‍🏫👩‍🏫"
+      };
+    }
+  }
   // Thank you responses
   else if (text.includes("thank") || text.includes("thanks") || text.includes("salamat") || text.includes("salamat kaayo")) {
     
@@ -269,15 +321,15 @@ function handleMessage(sender_psid, text) {
     
     if (isBisaya) {
       response = { 
-        text: "Naa mi sa Saint Joseph College, Maasin City. 📍"
+        text: "Naa mi sa **Saint Joseph College**\nTunga-Tunga, Maasin City, Southern Leyte 📍"
       };
     } else if (isTagalog) {
       response = { 
-        text: "Nandito kami sa Saint Joseph College, Maasin City. 📍"
+        text: "Nandito kami sa **Saint Joseph College**\nTunga-Tunga, Maasin City, Southern Leyte 📍"
       };
     } else {
       response = { 
-        text: "We're located at Saint Joseph College, Maasin City. 📍"
+        text: "We're located at **Saint Joseph College**\nTunga-Tunga, Maasin City, Southern Leyte 📍"
       };
     }
   } 
@@ -340,8 +392,5 @@ function callSendAPI(sender_psid, response) {
 
 const PORT = process.env.PORT || 10000;
 
-
 // ✅ Start server
-app.listen(PORT, () => console.log🚀 Bot server running on port ${PORT}`));
-
-
+app.listen(PORT, () => console.log(`🚀 Bot server running on port ${PORT}`));
