@@ -394,3 +394,49 @@ const PORT = process.env.PORT || 10000;
 
 // ✅ Start server
 app.listen(PORT, () => console.log(`🚀 Bot server running on port ${PORT}`));
+
+import fetch from "node-fetch";
+
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
+const updateMessengerProfile = async () => {
+  try {
+    const response = await fetch(
+      `https://graph.facebook.com/v19.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          get_started: { payload: "GET_STARTED" },
+          greeting: [
+            {
+              locale: "default",
+              text: "👋 Hi! I'm Hestia, your Tourism & Hospitality Department assistant. How can I help you today?",
+            },
+          ],
+          persistent_menu: [
+            {
+              locale: "default",
+              composer_input_disabled: false,
+              call_to_actions: [
+                { type: "postback", title: "Who is the Dean?", payload: "DEAN" },
+                { type: "postback", title: "Who are the instructors?", payload: "INSTRUCTORS" },
+                { type: "postback", title: "Where is Saint Joseph College?", payload: "LOCATION" },
+              ],
+            },
+          ],
+        }),
+      }
+    );
+
+    const result = await response.json();
+    console.log("✅ Messenger profile updated:", result);
+  } catch (error) {
+    console.error("❌ Failed to update Messenger profile:", error);
+  }
+};
+
+// Call once on startup
+updateMessengerProfile();
+
+
