@@ -339,7 +339,33 @@ function callSendAPI(sender_psid, response) {
 }
 
 const PORT = process.env.PORT || 10000;
+
+
+// ✅ Privacy Policy route (required by Facebook)
+app.get("/privacy", (req, res) => {
+  res.send(`
+    <h1>Privacy Policy</h1>
+    <p>This chatbot, Hestia Tourism Chatbot, is designed to assist users with information about the Tourism & Hospitality Department at Saint Joseph College.</p>
+    <p>We do not collect or store any personal data from users. Messages sent to this chatbot are only used to provide relevant responses and are not shared with third parties.</p>
+    <p>If you have any questions about this policy, please contact us via the official Saint Joseph College Facebook Page.</p>
+  `);
+});
+
+// ✅ Terms of Service route (recommended by Facebook)
+app.get("/terms", (req, res) => {
+  res.send(`
+    <h1>Terms of Service</h1>
+    <p>Welcome to the Hestia Tourism Chatbot. By using this chatbot, you agree to use it responsibly and only for its intended purpose — to provide information about the Tourism & Hospitality Department at Saint Joseph College.</p>
+    <p>This chatbot is provided as-is and may be updated or improved over time. We are not responsible for any misunderstanding or misuse of the chatbot's information.</p>
+    <p>If you have concerns or questions, please contact the official Saint Joseph College Facebook Page.</p>
+  `);
+});
+
+
+// ✅ Start server
 app.listen(PORT, () => console.log(`🚀 Bot server running on port ${PORT}`));
+
+
 
 
 
